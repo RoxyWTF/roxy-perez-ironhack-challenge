@@ -1,2 +1,2 @@
-# ironhack-challenge
- Challenge Roxy Pérez para IronHack Valencia - Profesor: Germán Álvarez
+# ironhack-challenge 2022
+ Challenge de Roxy Pérez para IronHack Valencia - Profesor: Germán Álvarez
