@@ -1,11 +1,9 @@
-Chart.defaults.color = '#fff'
-Chart.defaults.borderColor = '#444'
-
+Chart.defaults.color = '#fff';
+Chart.defaults.borderColor = '#444';
 
 fetch('https://multiapi-app.herokuapp.com/foods')
     .then(response => response.json())
-    .then(foods => printFoodsCharts(foods))
-
+    .then(foods => printFoodsCharts(foods));
 
 
 function printFoodsCharts(foods) {
@@ -25,10 +23,12 @@ function printFoodsCharts(foods) {
 function printCaloriesChart(carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice) {
 
 
+    const foodsArray = [carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice];
+
     let data = {
-        labels: [carrot.name, pumpkin.name, corn.name, avocado.name, beef.name, pork.name, cod.name, milk.name, rice.name],
+        labels: foodsArray.map(eachFood => eachFood.name),
         datasets: [{
-            data: [carrot.kcal, pumpkin.kcal, corn.kcal, avocado.kcal, beef.kcal, pork.kcal, cod.kcal, milk.kcal, rice.kcal],
+            data: foodsArray.map(eachFood => eachFood.kcal),
             label: 'kcal',
             borderWidth: 2,
             borderColor: ['rgba(233, 105, 44, 1)', 'rgba(255, 140, 0, 1)', 'rgba(255, 244, 79, 1)', 'rgba(50, 205, 50, 1)', 'rgba(178, 34, 34, 1)', 'rgba(255, 188, 244, 1)', 'rgba(65, 105, 255, 1)', 'rgba(253, 255, 245, 1)', 'rgba(246, 248, 237, 1)'],
@@ -60,12 +60,13 @@ function printCaloriesChart(carrot, pumpkin, corn, avocado, beef, pork, cod, mil
 function printProteinsChart(carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice) {
 
 
+    const foodsArray = [carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice];
+
     let data = {
-        labels: [carrot.name, pumpkin.name, corn.name, avocado.name, beef.name, pork.name, cod.name, milk.name, rice.name],
+        labels: foodsArray.map(eachFood => eachFood.name),
         datasets: [{
-            data: [carrot.protein, pumpkin.protein, corn.protein, avocado.protein, beef.protein, pork.protein, cod.protein, milk.protein, rice.protein],
+            data: foodsArray.map(eachFood => eachFood.protein),
             label: 'kcal',
-            borderWidth: 2,
             borderColor: ['rgba(233, 105, 44, 1)', 'rgba(255, 140, 0, 1)', 'rgba(255, 244, 79, 1)', 'rgba(50, 205, 50, 1)', 'rgba(178, 34, 34, 1)', 'rgba(255, 188, 244, 1)', 'rgba(65, 105, 255, 1)', 'rgba(253, 255, 245, 1)', 'rgba(246, 248, 237, 1)'],
             backgroundColor: ['rgba(233, 105, 44, 0.4)', 'rgba(255, 140, 0, 0.4)', 'rgba(255, 244, 79, 0.5)', 'rgba(50, 205, 50, 0.4)', 'rgba(178, 34, 34, 0.4)', 'rgba(255, 188, 244, 0.6)', 'rgba(65, 105, 255, 0.5)', 'rgba(253, 255, 245, 0.7)', 'rgba(246, 248, 237, 0.5)']
 
@@ -91,12 +92,13 @@ function printProteinsChart(carrot, pumpkin, corn, avocado, beef, pork, cod, mil
 function printFatsChart(carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice) {
 
 
+    const foodsArray = [carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice];
+
     let data = {
-        labels: [carrot.name, pumpkin.name, corn.name, avocado.name, beef.name, pork.name, cod.name, milk.name, rice.name],
+        labels: foodsArray.map(eachFood => eachFood.name),
         datasets: [{
-            data: [carrot.fat, pumpkin.fat, corn.fat, avocado.fat, beef.fat, pork.fat, cod.fat, milk.fat, rice.fat],
+            data: foodsArray.map(eachFood => eachFood.fat),
             label: 'kcal',
-            borderWidth: 2,
             borderColor: ['rgba(233, 105, 44, 1)', 'rgba(255, 140, 0, 1)', 'rgba(255, 244, 79, 1)', 'rgba(50, 205, 50, 1)', 'rgba(178, 34, 34, 1)', 'rgba(255, 188, 244, 1)', 'rgba(65, 105, 255, 1)', 'rgba(253, 255, 245, 1)', 'rgba(246, 248, 237, 1)'],
             backgroundColor: ['rgba(233, 105, 44, 0.4)', 'rgba(255, 140, 0, 0.4)', 'rgba(255, 244, 79, 0.5)', 'rgba(50, 205, 50, 0.4)', 'rgba(178, 34, 34, 0.4)', 'rgba(255, 188, 244, 0.6)', 'rgba(65, 105, 255, 0.5)', 'rgba(253, 255, 245, 0.7)', 'rgba(246, 248, 237, 0.5)']
 
@@ -121,13 +123,13 @@ function printFatsChart(carrot, pumpkin, corn, avocado, beef, pork, cod, milk, r
 //Calcio
 function printCalciumChart(carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice) {
 
+    const foodsArray = [carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice];
 
     let data = {
-        labels: [carrot.name, pumpkin.name, corn.name, avocado.name, beef.name, pork.name, cod.name, milk.name, rice.name],
+        labels: foodsArray.map(eachFood => eachFood.name),
         datasets: [{
-            data: [carrot.calcium, pumpkin.calcium, corn.calcium, avocado.calcium, beef.calcium, pork.calcium, cod.calcium, milk.calcium, rice.calcium],
+            data: foodsArray.map(eachFood => eachFood.calcium),
             label: 'kcal',
-            borderWidth: 2,
             borderColor: ['rgba(233, 105, 44, 1)', 'rgba(255, 140, 0, 1)', 'rgba(255, 244, 79, 1)', 'rgba(50, 205, 50, 1)', 'rgba(178, 34, 34, 1)', 'rgba(255, 188, 244, 1)', 'rgba(65, 105, 255, 1)', 'rgba(253, 255, 245, 1)', 'rgba(246, 248, 237, 1)'],
             backgroundColor: ['rgba(233, 105, 44, 0.4)', 'rgba(255, 140, 0, 0.4)', 'rgba(255, 244, 79, 0.5)', 'rgba(50, 205, 50, 0.4)', 'rgba(178, 34, 34, 0.4)', 'rgba(255, 188, 244, 0.6)', 'rgba(65, 105, 255, 0.5)', 'rgba(253, 255, 245, 0.7)', 'rgba(246, 248, 237, 0.5)']
 
@@ -164,19 +166,22 @@ function printCalciumChart(carrot, pumpkin, corn, avocado, beef, pork, cod, milk
 //Comparativa calorías - proteínas
 function printProVsCalChart(carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice) {
 
-    const data = {
-        labels: [carrot.name, pumpkin.name, corn.name, avocado.name, beef.name, pork.name, cod.name, milk.name, rice.name],
+    const foodsArray = [carrot, pumpkin, corn, avocado, beef, pork, cod, milk, rice];
+
+    let data = {
+
+        labels: foodsArray.map(eachFood => eachFood.name),
         datasets: [
 
             {
-                data: [carrot.kcal, pumpkin.kcal, corn.kcal, avocado.kcal, beef.kcal, pork.kcal, cod.kcal, milk.kcal, rice.kcal],
+                data: foodsArray.map(eachFood => eachFood.kcal),
                 label: 'kcal',
                 borderWidth: 2,
                 borderColor: 'rgba(73, 176, 245, 1)',
                 backgroundColor: 'rgba(73, 176, 245, 0.5)',
             },
             {
-                data: [carrot.protein, pumpkin.protein, corn.protein, avocado.protein, beef.protein, pork.protein, cod.protein, milk.protein, rice.protein],
+                data: foodsArray.map(eachFood => eachFood.protein),
                 label: 'proteínas',
                 borderWidth: 2,
                 borderColor: 'rgba(253, 191, 68, 1)',
